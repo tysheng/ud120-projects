@@ -9,25 +9,20 @@
     Sara has label 0
     Chris has label 1
 """
-    
-import sys
-from time import time
-sys.path.append("../tools/")
-from email_preprocess import preprocess
-
-
-### features_train and features_test are the features for the training
-### and testing datasets, respectively
-### labels_train and labels_test are the corresponding item labels
-features_train, features_test, labels_train, labels_test = preprocess()
-
-
-
 
 #########################################################
 ### your code goes here ###
+from sklearn.naive_bayes import GaussianNB
 
+clf = GaussianNB()
+import tools.common_method as cm
+cm.do_with_clf(clf)
 
 #########################################################
+"""
+no. of Chris training emails: 7936
+no. of Sara training emails: 7884
+[0 0 1 ..., 1 0 0]
+0.973265073948
 
-
+"""
