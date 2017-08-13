@@ -20,13 +20,13 @@ def prettyPicture(clf, X_test, y_test):
     plt.ylim(yy.min(), yy.max())
 
     plt.pcolormesh(xx, yy, Z, cmap=pl.cm.seismic)
-
+    # print(xx,yy)
+    # plt.plot(xx,yy,'k-')
     # Plot also the test points
     grade_sig = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii]==0]
     bumpy_sig = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii]==0]
     grade_bkg = [X_test[ii][0] for ii in range(0, len(X_test)) if y_test[ii]==1]
     bumpy_bkg = [X_test[ii][1] for ii in range(0, len(X_test)) if y_test[ii]==1]
-
     plt.scatter(grade_sig, bumpy_sig, color = "b", label="fast")
     plt.scatter(grade_bkg, bumpy_bkg, color = "r", label="slow")
     plt.legend()
@@ -34,6 +34,8 @@ def prettyPicture(clf, X_test, y_test):
     plt.ylabel("grade")
 
     plt.savefig("test.png")
+
+
 
 import base64
 import json
@@ -46,5 +48,5 @@ def output_image(name, format, bytes):
     data['name'] = name
     data['format'] = format
     data['bytes'] = base64.encodestring(bytes)
-    print image_start+json.dumps(data)+image_end
+    print(image_start + json.dumps(data) + image_end)
                                     

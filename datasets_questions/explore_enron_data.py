@@ -17,6 +17,21 @@
 
 import pickle
 
-enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
+enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "rb"))
+# enron_name = pickle.load(open("../final_project/poi_name.txt", "rb"))
+# enron_data = dict(enron_data)
+# print(enron_data)
+count = 0
+for k, v in enron_data.items():
+    # v=dict(v)
+    if True:#"SKILLING JEFF" in k
+        # print(v)
 
+        if v['total_payments'] == 'NaN':
+            count+=1
+        # for k_,v_ in v.items():
+        #     if 'total_payments' in k_:
+        #         print(k_,v_)
 
+print(count)
+print(count/len(enron_data))
