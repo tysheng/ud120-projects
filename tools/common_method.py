@@ -54,4 +54,15 @@ def do_with_reg():
     y=[100,200,300,150,250,350,200,300,400]
     reg.fit(x,y)
     print(reg.coef_,reg.intercept_)
-do_with_reg()
+# do_with_reg()
+import nltk
+# import ssl
+#
+# try:
+#     _create_unverified_https_context = ssl._create_unverified_context
+# except AttributeError:
+#     pass
+# else:
+#     ssl._create_default_https_context = _create_unverified_https_context
+#
+# nltk.download()
