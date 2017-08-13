@@ -43,5 +43,15 @@ def do_with_data(clf, features_train, features_test, labels_train, labels_test, 
 
     accu = metrics.accuracy_score(y_true=labels_test, y_pred=pred)
     # print(pred)
-    print('accuracy_score: ',accu)
+    print('accuracy_score: ', accu)
     print('处理数据时间：', time.time() - time_)
+
+
+def do_with_reg():
+    from sklearn.linear_model import LinearRegression
+    reg = LinearRegression()
+    x=[[20,80],[40,80],[60,80],[20,100],[40,100],[60,100],[20,120],[40,120],[60,120]]
+    y=[100,200,300,150,250,350,200,300,400]
+    reg.fit(x,y)
+    print(reg.coef_,reg.intercept_)
+do_with_reg()
